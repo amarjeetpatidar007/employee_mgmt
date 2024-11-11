@@ -58,7 +58,7 @@ class EmployeeDetailScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           context.read<EmployeeBloc>().add(
-                            DeleteEmployee(employee.id),
+                            DeleteEmployee(employee.id!),
                           );
                           Navigator.pop(context); // Close dialog
                           Navigator.pop(context); // Close screen

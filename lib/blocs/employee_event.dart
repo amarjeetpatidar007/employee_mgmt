@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 import '../model/employee_model.dart';
 
 
-// Events
 abstract class EmployeeEvent extends Equatable {
   @override
   List<Object?> get props => [];

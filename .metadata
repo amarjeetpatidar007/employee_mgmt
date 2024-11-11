@@ -18,6 +18,12 @@ migration:
     - platform: android
       create_revision: 04bcfe9281ee077eaead59186f383fca802f39dd
       base_revision: 04bcfe9281ee077eaead59186f383fca802f39dd
+    - platform: web
+      create_revision: 04bcfe9281ee077eaead59186f383fca802f39dd
+      base_revision: 04bcfe9281ee077eaead59186f383fca802f39dd
+    - platform: windows
+      create_revision: 04bcfe9281ee077eaead59186f383fca802f39dd
+      base_revision: 04bcfe9281ee077eaead59186f383fca802f39dd
 
   # User provided section
 

@@ -3,6 +3,7 @@ import 'package:employee_management/screens/add_edit_employee_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 
 import '../blocs/employee_bloc.dart';
 import '../blocs/employee_event.dart';
@@ -17,7 +18,7 @@ class EmployeeListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => EmployeeBloc()..add(LoadEmployees()),
+      create: (context) => EmployeeBloc(RepositoryProvider.of<Box<Employee>>(context))..add(LoadEmployees()),
       child: BlocBuilder<EmployeeBloc, EmployeeState>(
         builder: (context, state) {
           if (state is EmployeeLoading) {
@@ -107,7 +108,7 @@ class EmployeeListScreen extends StatelessWidget {
         child: Icon(Icons.delete, color: Colors.white),
       ),
       onDismissed: (direction) {
-        context.read<EmployeeBloc>().add(DeleteEmployee(employee.id));
+        context.read<EmployeeBloc>().add(DeleteEmployee(employee.id!));
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

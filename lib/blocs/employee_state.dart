@@ -1,5 +1,3 @@
-
-// States
 import 'package:equatable/equatable.dart';
 
 import '../model/employee_model.dart';
