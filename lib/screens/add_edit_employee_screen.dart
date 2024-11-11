@@ -317,7 +317,7 @@ class AddEditEmployeeScreenState extends State<AddEditEmployeeScreen> {
   void _deleteEmployee() {
     if (widget.employee != null) {
       final employeeBloc = context.read<EmployeeBloc>();
-      employeeBloc.add(DeleteEmployee(widget.employee!.id));
+      employeeBloc.add(DeleteEmployee(widget.employee!.id!));
       Navigator.pop(context);
     }
   }
